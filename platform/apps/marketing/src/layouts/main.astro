@@ -6,10 +6,47 @@ import "@/styles/global.css"
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="shortcut icon" href="/logo.svg" />
     <title>Form + Function - Next Gen Engineering</title>
+    <script is:inline>
+      (() => {
+        try {
+          if (!window.sessionStorage.getItem("marketing:initial-loader-shown")) {
+            document.documentElement.classList.add("show-initial-loader");
+          }
+        } catch {
+          document.documentElement.classList.add("show-initial-loader");
+        }
+      })();
+    </script>
   </head>
   <body>
-    <slot />
+    <div id="initial-loader" aria-hidden="true">
+      <img src="/logo.svg" alt="" class="initial-loader-logo" />
+    </div>
+    <div id="app-root">
+      <slot />
+    </div>
+    <script is:inline>
+      (() => {
+        if (!document.documentElement.classList.contains("show-initial-loader")) return;
+
+        window.setTimeout(() => {
+          document.documentElement.classList.add("initial-loader-exit");
+
+          window.setTimeout(() => {
+            document.documentElement.classList.remove("show-initial-loader");
+            document.documentElement.classList.remove("initial-loader-exit");
+
+            try {
+              window.sessionStorage.setItem("marketing:initial-loader-shown", "1");
+            } catch {
+              // no-op
+            }
+          }, 420);
+        }, 700);
+      })();
+    </script>
   </body>
 </html>

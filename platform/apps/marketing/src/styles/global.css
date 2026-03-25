@@ -127,3 +127,55 @@
     @apply font-sans bg-background;
   }
 }
+
+#initial-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 420ms ease;
+}
+
+.initial-loader-logo {
+  width: 5rem;
+  height: 5rem;
+  animation: initial-loader-pulse 850ms ease-in-out infinite;
+}
+
+html.show-initial-loader,
+html.show-initial-loader body {
+  overflow: hidden;
+}
+
+html.show-initial-loader #initial-loader {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+html.show-initial-loader #app-root {
+  visibility: hidden;
+}
+
+html.initial-loader-exit #initial-loader {
+  opacity: 0;
+}
+
+@keyframes initial-loader-pulse {
+  0% {
+    opacity: 0.72;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.84;
+    transform: scale(0.96);
+  }
+}
