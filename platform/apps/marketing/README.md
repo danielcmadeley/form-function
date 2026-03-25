@@ -1,36 +1,51 @@
-# Astro + React + TypeScript + shadcn/ui
+# Marketing App (Astro)
 
-This is a template for a new Astro project with React, TypeScript, and shadcn/ui.
+Cloudflare deployment target: **Workers static assets**.
 
-## Adding components
-
-To add components to your app, run the following command:
+## Local development
 
 ```bash
-npx shadcn@latest add button
+bun run dev
 ```
 
-This will place the ui components in the `src/components` directory.
+## Production build
 
-## Using components
-
-To use the components in your app, import them in an `.astro` file:
-
-```astro
----
-import { Button } from "@/components/ui/button"
----
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Astro App</title>
-  </head>
-  <body>
-    <div class="grid h-screen place-items-center content-center">
-      <Button>Button</Button>
-    </div>
-  </body>
-</html>
+```bash
+bun run build
 ```
+
+## Cloudflare deployment
+
+Wrangler config is in `wrangler.jsonc` and is set up for static asset deployment from `./dist`.
+
+### 1) One-time auth on your machine
+
+```bash
+bunx wrangler login
+```
+
+### 2) Preflight checks
+
+```bash
+bun run lint
+bun run build
+```
+
+### 3) Local worker preview (uses built assets)
+
+```bash
+bun run cf:dev
+```
+
+### 4) Deploy to production
+
+```bash
+bun run cf:deploy
+```
+
+## Production checklist
+
+- Worker name in `wrangler.jsonc` is slug-safe (`form-function-marketing`).
+- `compatibility_date` is current.
+- Cloudflare Auto Minify is disabled if hydration mismatches appear.
+- DNS/route is attached to the deployed worker in Cloudflare dashboard.

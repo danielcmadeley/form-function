@@ -1,17 +1,28 @@
 ---
 import Layout from "@/layouts/main.astro"
-import { Button } from "@/components/ui/button"
+import AsciiSection from "@/components/marketing/ascii-section.astro"
+import BentoGridSection from "@/components/marketing/bento-grid-section.astro"
+import FooterGlowSection from "@/components/marketing/footer-glow-section.astro"
+import HeatmapStrip from "@/components/marketing/heatmap-strip.astro"
+import HeroSection from "@/components/marketing/hero-section.astro"
+import MarketingHeader from "@/components/marketing/marketing-header.astro"
+import MissionSection from "@/components/marketing/mission-section.astro"
+import NewsletterSection from "@/components/marketing/newsletter-section.astro"
+import ProblemSolvedSection from "@/components/marketing/problem-solved-section.astro"
+import ServicesSection from "@/components/marketing/services-section.astro"
 ---
 
 <Layout>
-  <div class="flex min-h-svh p-6">
-    <div class="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-      <div>
-        <h1 class="font-medium">Project ready!</h1>
-        <p>You may now add components and start building.</p>
-        <p>We've already added the button component for you.</p>
-        <Button client:load className="mt-2">Button</Button>
-      </div>
-    </div>
-  </div>
+  <main class="relative overflow-hidden bg-neutral-50" id="platform">
+    <MarketingHeader />
+    <HeroSection />
+    <AsciiSection />
+    <ProblemSolvedSection />
+    <MissionSection />
+    <ServicesSection />
+    <HeatmapStrip />
+    <NewsletterSection />
+    <BentoGridSection />
+    <FooterGlowSection />
+  </main>
 </Layout>

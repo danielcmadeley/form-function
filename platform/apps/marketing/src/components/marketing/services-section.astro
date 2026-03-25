@@ -1,0 +1,43 @@
+---
+import SectionShell from "@/components/marketing/section-shell.astro";
+
+const tags = ["Calculation Automation", "Internal Tool Development", "Workflow Modernisation"];
+---
+
+<SectionShell outerClass="border-b border-fuchsia-200/70 bg-neutral-800" withRails={false}>
+  <div class="mx-auto w-full max-w-5xl border-x border-fuchsia-200/70">
+    <section id="services" class="w-full border-b border-fuchsia-200/70">
+      <div class="grid w-full border-b border-fuchsia-200/70 md:grid-cols-3">
+        {
+          tags.map((tag, index) => (
+            <div
+              key={tag}
+              class={`flex h-12 items-center justify-center px-4 text-sm text-fuchsia-50/90 ${index < 2 ? "md:border-r md:border-fuchsia-200/70" : ""}`}
+            >
+              {tag}
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="grid min-h-72 place-items-center border-b border-fuchsia-200/70 bg-neutral-800 px-6 py-10">
+        <pre class="overflow-hidden text-center text-[10px] leading-[11px] text-fuchsia-100/75 md:text-xs md:leading-4">{`
+        ┌────────────┐
+        │  Timber    │
+        │  Assembly  │
+   ┌────┴────┐   ┌───┴───┐
+   │ Beam A  │===│ Bolt  │
+   └─────────┘   └───────┘
+            `}</pre>
+      </div>
+    </section>
+
+    <section class="px-6 py-12 text-fuchsia-50/90">
+      <h3 class="text-3xl font-semibold">OpenSource</h3>
+      <p class="mt-4 max-w-xl text-sm leading-relaxed text-fuchsia-50/80 md:text-base">
+        We are the creators, maintainers, and contributors of some of the most critical infrastructure projects in the
+        JavaScript ecosystem.
+      </p>
+    </section>
+  </div>
+</SectionShell>

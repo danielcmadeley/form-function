@@ -1,0 +1,21 @@
+---
+import SectionShell from "@/components/marketing/section-shell.astro";
+
+const asciiTexture =
+  "https://workers.paper.design/file-assets/01KKTYJSNKZP49MMVH1V42GW75/01KM4MMVVHNX6BKVN3CK2RPRE0.svg";
+---
+
+<section
+  class="relative z-10 flex h-[100vh] w-full items-end justify-center border-b border-fuchsia-200 bg-cover bg-center pt-32"
+  style={`background-image: linear-gradient(to bottom, rgb(250 250 250 / 0.7), rgb(250 250 250 / 0.7)), url('${asciiTexture}')`}
+>
+  <SectionShell outerClass="h-full" innerClass="flex h-full items-end justify-center pb-24" withRails={true}>
+    <div class="max-w-2xl text-center">
+      <h2 class="text-balance text-3xl font-bold text-fuchsia-800 md:text-5xl">Built by Engineers for Engineers</h2>
+      <p class="mt-4 text-sm font-semibold text-fuchsia-950/85 md:text-base">
+        The construction industry moves slowly with technological advancements. We are building Form + Function so your design
+        office can catch up.
+      </p>
+    </div>
+  </SectionShell>
+</section>

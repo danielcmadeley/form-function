@@ -1,10 +1,16 @@
 # Roadmap
 
 ## Now
-- [ ] Define near-term platform priorities.
+- [ ] Stabilize app topology: `marketing`, `docs`, `web-app`, `api`.
+- [ ] Keep Bun + Turbo + Biome workflow consistent across all platform apps.
+- [ ] Define `packages/types` as the canonical API shape source.
 
 ## Next
-- [ ] Capture medium-term improvements.
+- [ ] Implement auth flow end-to-end across `web-app` and `api`.
+- [ ] Add docs search pipeline integration and index sync workflow.
+- [ ] Expand shared packages (`ui`, `auth`, `db`, domain utilities).
 
 ## Later
-- [ ] Capture exploratory work.
+- [ ] Offline/collab architecture for web app (LiveStore/worker model).
+- [ ] Production hardening: rate limits, tracing, release automation.
+- [ ] Performance and caching strategy per app + package.

@@ -1,0 +1,17 @@
+---
+interface Props {
+  outerClass?: string;
+  innerClass?: string;
+  withRails?: boolean;
+}
+
+const { outerClass = "", innerClass = "", withRails = true } = Astro.props;
+---
+
+<section class={`w-full ${outerClass}`}>
+  <div
+    class={`mx-auto w-full max-w-5xl  ${withRails ? "border-x border-fuchsia-200/70" : ""} ${innerClass}`}
+  >
+    <slot />
+  </div>
+</section>

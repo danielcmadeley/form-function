@@ -1,0 +1,21 @@
+---
+const rows = [
+  { id: "a", left: "w-full md:w-[31%]", right: "w-full md:w-[69%]" },
+  { id: "b", left: "w-full md:w-[69%]", right: "w-full md:w-[31%]" },
+  { id: "c", left: "w-full md:w-[31%]", right: "w-full md:w-[69%]" },
+  { id: "d", left: "w-full md:w-[69%]", right: "w-full md:w-[31%]" },
+];
+---
+
+<section class="w-full border-b border-fuchsia-200">
+  <div class="mx-auto w-full max-w-5xl border-x border-fuchsia-200/70">
+    {
+      rows.map((row) => (
+        <div key={row.id} class="flex min-h-44 flex-col border-b border-fuchsia-200/70 md:min-h-48 md:flex-row">
+          <div class={`${row.left} border-fuchsia-200/70 md:border-r`}></div>
+          <div class={row.right}></div>
+        </div>
+      ))
+    }
+  </div>
+</section>

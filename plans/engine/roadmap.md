@@ -1,10 +1,16 @@
 # Roadmap
 
 ## Now
-- [ ] Define near-term engine priorities.
+- [ ] Establish uv-managed Python service baseline and runtime conventions.
+- [ ] Define initial FastAPI contract for chat/calcs/export/health.
+- [ ] Set module boundaries for RAG, calcs, export, ingest, and models.
 
 ## Next
-- [ ] Capture medium-term improvements.
+- [ ] Implement retrieval and ingestion pipeline with Qdrant + Typesense targets.
+- [ ] Build deterministic calc runner paths and validation models.
+- [ ] Add test coverage for API contract and core engineering computations.
 
 ## Later
-- [ ] Capture exploratory work.
+- [ ] Contract generation/validation against platform shared types.
+- [ ] Evaluation framework for retrieval and answer quality.
+- [ ] Performance tuning and autoscaling/deployment hardening.

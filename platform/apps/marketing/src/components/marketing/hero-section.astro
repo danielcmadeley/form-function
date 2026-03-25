@@ -1,0 +1,22 @@
+---
+import SectionShell from "@/components/marketing/section-shell.astro";
+
+const heroImage =
+  "https://workers.paper.design/file-assets/01KKTYJSNKZP49MMVH1V42GW75/01KM4E0R439MJF3X3C981F17QM.png";
+---
+
+<section
+  id="hero"
+  class="relative z-20 flex h-[100vh] w-full items-center justify-center border-y border-fuchsia-200 bg-cover bg-center shadow-[0_30px_60px_rgba(17,24,39,0.2)]"
+  style={`background-image: linear-gradient(to bottom, rgb(248 250 252 / 0.62), rgb(248 250 252 / 0.62)), url('${heroImage}')`}
+>
+  <SectionShell outerClass="h-full" innerClass="relative flex h-full items-start justify-center pt-60" withRails={true}>
+    <div class="max-w-4xl text-center">
+      <p class="mb-3 text-xs font-extrabold tracking-wide text-fuchsia-900">New: Eurocode Doc Search</p>
+      <h1 class="text-balance text-2xl font-bold leading-tight text-fuchsia-800 md:text-4xl">
+        The way engineers work is changing.<br />
+        We&apos;re leading it.
+      </h1>
+    </div>
+  </SectionShell>
+</section>
