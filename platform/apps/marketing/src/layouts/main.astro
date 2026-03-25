@@ -11,6 +11,10 @@ import { OpenPanelComponent } from '@openpanel/astro';
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="shortcut icon" href="/logo.svg" />
     <title>Form + Function - Next Gen Engineering</title>
+    <OpenPanelComponent
+    clientId="b8b2b817-1197-4436-bcb1-c077488bffac"
+    trackScreenViews={true}
+  />
     <script is:inline>
       (() => {
         try {
@@ -22,10 +26,7 @@ import { OpenPanelComponent } from '@openpanel/astro';
         }
       })();
     </script>
-    <OpenPanelComponent
-    clientId="b8b2b817-1197-4436-bcb1-c077488bffac"
-    trackScreenViews={true}
-  />
+  
   </head>
   <body>
     <div id="initial-loader" aria-hidden="true">
