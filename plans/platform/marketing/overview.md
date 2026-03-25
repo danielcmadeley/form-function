@@ -9,19 +9,29 @@
   - Transparent over hero.
   - Neutral background after hero.
   - Hide on scroll down, reveal on scroll up.
-- Heatmap strip implemented with `@paper-design/shaders-react` using `/public/logo.svg`.
+- Heatmap strip implemented with `@paper-design/shaders-react` using `/public/logo.svg` and Paper-matched parameters.
+- Initial page-load overlay now runs at layout level (pre-paint) and appears only on first session load to avoid content flash before loader.
+- Browser tab icon now uses `/public/logo.svg` (`rel="icon"` and `rel="shortcut icon"`).
 
 ## Design Constraints
 - Core palette constrained to the two Paper tones:
   - `oklch(97.7% 0.017 320.1)`
   - `oklch(90.3% 0.076 319.6)`
 - Content rail constrained to `max-w-5xl` (1024px).
+- Heatmap uses equivalent hex values for shader compatibility:
+  - `#fcf5ff`
+  - `#f6cfff`
 
 ## Deployment Notes
 - Deploy target: Cloudflare Workers static assets.
 - Source of truth:
   - `platform/apps/marketing/wrangler.jsonc`
   - `platform/apps/marketing/README.md`
+- CI/CD inputs (Workers Builds):
+  - Root directory: `platform/apps/marketing`
+  - Build command: `npm run build`
+  - Deploy command: `npx wrangler deploy`
+  - Non-production branch deploy command: `npx wrangler versions upload`
 - Release commands:
   - `bun run lint`
   - `bun run build`

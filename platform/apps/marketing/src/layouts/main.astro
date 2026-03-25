@@ -1,5 +1,7 @@
 ---
 import "@/styles/global.css"
+import { OpenPanelComponent } from '@openpanel/astro';
+
 ---
 
 <html lang="en">
@@ -20,6 +22,10 @@ import "@/styles/global.css"
         }
       })();
     </script>
+    <OpenPanelComponent
+    clientId="b8b2b817-1197-4436-bcb1-c077488bffac"
+    trackScreenViews={true}
+  />
   </head>
   <body>
     <div id="initial-loader" aria-hidden="true">

@@ -29,3 +29,9 @@
 - Decision: Deploy marketing via Cloudflare Workers static assets (`wrangler` + `dist`) and avoid `@astrojs/cloudflare` adapter until Astro/adapter versions are aligned for SSR needs.
 - Consequences: `wrangler.jsonc` and app scripts are the deployment source of truth; migration to adapter can be revisited if on-demand rendering is introduced.
 - Alternatives considered: keep adapter enabled in current version set; deploy through Cloudflare Pages.
+
+## 2026-03-26 - Marketing first-load UX and shader integration approach
+- Context: Initial loader implemented as a client island caused content to render before loader appeared; heatmap visual needed closer parity with Paper while keeping runtime compatibility.
+- Decision: Use a layout-level pre-paint loader gate (inline script + CSS class) for first-session load only, keep interactive header as React island, and implement heatmap via `@paper-design/shaders-react` with logo-based shader input and constrained palette.
+- Consequences: First-load experience no longer flashes underlying content, shader behavior matches design controls more closely, and browser icon is standardized to `/logo.svg`.
+- Alternatives considered: loader as client island only; CSS-only heatmap approximation.
