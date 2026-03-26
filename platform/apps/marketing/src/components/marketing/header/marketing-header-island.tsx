@@ -14,10 +14,10 @@ import {
 } from "@/components/ui/sheet"
 
 const navLinks = [
-  { href: "#services", label: "Solution" },
-  { href: "#platform", label: "Platform" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#resources", label: "Resources" },
+  { href: "/solution", label: "Solution" },
+  { href: "/platform", label: "Platform" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/resources", label: "Resources" },
 ]
 
 export function MarketingHeaderIsland() {
@@ -106,9 +106,9 @@ export function MarketingHeaderIsland() {
           isSolid ? "bg-neutral-50" : "bg-transparent"
         }`}
       >
-        <div className="mx-auto w-full max-w-5xl border-x border-fuchsia-200/70 px-5 md:px-6 xl:px-4">
-          <div className="mx-auto flex h-[58px] w-full max-w-5xl items-center">
-            <a href="#platform" className="flex items-center gap-3">
+        <div className="mx-auto w-full max-w-[calc(100%-100px)] border-x border-fuchsia-200/70 px-5 xl:max-w-5xl">
+          <div className="mx-auto flex h-[58px] w-full items-center">
+            <a href="/" className="flex items-center gap-3">
               <span className="text-xl font-extrabold text-fuchsia-700">
                 <img src="/logo.svg" alt="Form + Function logo" className="h-10 w-auto" />
               </span>
@@ -181,7 +181,7 @@ export function MarketingHeaderIsland() {
                   variant="ghost"
                   className="rounded-md border border-fuchsia-200 bg-white px-4 py-3 text-sm font-medium text-fuchsia-900 transition hover:bg-fuchsia-50"
                   onClick={() => {
-                    window.location.hash = link.href
+                    window.location.assign(link.href)
                   }}
                 />
               }

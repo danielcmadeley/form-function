@@ -10,7 +10,7 @@ const { outerClass = "", innerClass = "", withRails = true } = Astro.props;
 
 <section class={`w-full ${outerClass}`}>
   <div
-    class={`mx-auto w-full max-w-5xl  ${withRails ? "border-x border-fuchsia-200/70" : ""} ${innerClass}`}
+    class={`mx-auto w-full max-w-[calc(100%-100px)] xl:max-w-5xl ${withRails ? "border-x border-fuchsia-200/70" : ""} ${innerClass}`}
   >
     <slot />
   </div>
