@@ -1,0 +1,16 @@
+---
+import SectionShell from "@/components/marketing/section-shell.astro";
+
+const appImage =
+  "https://workers.paper.design/file-assets/01KKTYJSNKZP49MMVH1V42GW75/01KMK9PDTPRFG2D1PVVXAEFWXX.webp";
+---
+
+<SectionShell outerClass="border-b border-fuchsia-200/70" innerClass="py-0" withRails={false}>
+  <section class="mx-auto flex w-full max-w-5xl justify-center border-x border-fuchsia-200/70 bg-fuchsia-200/70 px-5 py-6 md:px-9 md:py-10 lg:px-12 lg:py-12">
+    <div
+      class="h-[220px] w-full max-w-[850px] bg-cover bg-center sm:h-[280px] md:h-[360px] lg:h-[432px]"
+      style={`background-image: url('${appImage}')`}
+      aria-label="Project management dashboard screenshot"
+    ></div>
+  </section>
+</SectionShell>

@@ -35,3 +35,9 @@
 - Decision: Use a layout-level pre-paint loader gate (inline script + CSS class) for first-session load only, keep interactive header as React island, and implement heatmap via `@paper-design/shaders-react` with logo-based shader input and constrained palette.
 - Consequences: First-load experience no longer flashes underlying content, shader behavior matches design controls more closely, and browser icon is standardized to `/logo.svg`.
 - Alternatives considered: loader as client island only; CSS-only heatmap approximation.
+
+## 2026-03-26 - Marketing shadcn UI ownership boundary
+- Context: Marketing now uses shared primitives from `platform/apps/marketing/src/components/ui/`, and direct edits there create drift from generated shadcn sources.
+- Decision: Treat `platform/apps/marketing/src/components/ui/*` as shadcn-managed/vendor code and do not edit those files during normal feature work.
+- Consequences: Feature customization should happen in `platform/apps/marketing/src/components/marketing/*`; any required primitive change must go through shadcn regeneration/update flow and be documented.
+- Alternatives considered: direct per-feature edits inside `src/components/ui`.

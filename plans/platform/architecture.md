@@ -37,6 +37,11 @@
 - App/package scripts should be runnable independently and via Turbo.
 - Shared package boundaries should be respected; avoid app-to-app imports.
 
+## Marketing UI Boundary
+- `apps/marketing/src/components/ui/*` is a shadcn-managed primitive layer for the marketing app.
+- Do not hand-edit marketing `src/components/ui/*` during normal feature work; compose and style at `apps/marketing/src/components/marketing/*` instead.
+- If primitive behavior must change, use shadcn regeneration/update workflow and record the rationale in `plans/platform/decisions.md`.
+
 ## External Integrations (Target)
 - Cloudflare Workers for `apps/api`.
 - Docs search integration (Typesense/Qdrant-backed flows).

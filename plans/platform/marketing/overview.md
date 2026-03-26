@@ -22,6 +22,12 @@
   - `#fcf5ff`
   - `#f6cfff`
 
+## UI Component Policy
+- `platform/apps/marketing/src/components/ui/*` is shadcn-generated code and should be treated as vendor-owned primitives.
+- Do not hand-edit files in `platform/apps/marketing/src/components/ui/` for feature work in marketing pages.
+- Prefer styling/behavior changes in app-level components under `platform/apps/marketing/src/components/marketing/`.
+- If a primitive change is unavoidable, regenerate/update via shadcn workflow and document rationale in `plans/platform/decisions.md`.
+
 ## Deployment Notes
 - Deploy target: Cloudflare Workers static assets.
 - Source of truth:

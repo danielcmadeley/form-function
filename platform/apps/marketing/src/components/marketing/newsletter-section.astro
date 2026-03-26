@@ -1,25 +1,17 @@
 ---
 import SectionShell from "@/components/marketing/section-shell.astro";
+import { NewsletterForm } from "@/components/marketing/newsletter-form";
 ---
 
-<SectionShell outerClass="border-b border-fuchsia-200"  withRails={false}>
-  <section class="mx-auto flex w-full max-w-5xl flex-col gap-8 border-x border-fuchsia-200/70 px-4 sm:px-6 md:flex-row md:items-center md:justify-between">
-    <h3 class="max-w-md text-balance text-3xl leading-tight text-fuchsia-100/90 md:text-5xl">
+<SectionShell outerClass="border-b border-fuchsia-200" withRails={false}>
+  <section class="mx-auto flex min-h-[200px] w-full max-w-5xl flex-col gap-5 border-x border-fuchsia-200 px-5 py-7 md:flex-row md:items-center md:justify-between md:gap-14 md:px-5 md:py-11">
+    <h3 class="max-w-md text-balance text-3xl leading-tight text-fuchsia-100/90 md:text-[40px] md:leading-[1.2] lg:text-5xl">
       Interested in the future of construction tooling?
     </h3>
 
-    <div class="w-full max-w-xl">
-      <p class="mb-4 text-right text-lg text-fuchsia-100/80">Subscribe to the monthly Newsletter</p>
-      <form class="flex items-center gap-2 rounded-lg border border-fuchsia-600 bg-fuchsia-600 p-2">
-        <input
-          type="email"
-          placeholder="Your email address..."
-          class="h-10 w-full rounded-md border border-transparent bg-transparent px-3 text-sm text-fuchsia-100 placeholder:text-fuchsia-200/70 focus:border-fuchsia-300 focus:outline-none"
-        />
-        <button type="submit" class="h-10 rounded-md border border-fuchsia-200/70 bg-neutral-50 px-5 text-sm font-semibold text-fuchsia-700">
-          Subscribe
-        </button>
-      </form>
+    <div class="w-full max-w-[430px] md:max-w-[472px]">
+      <p class="mb-3 text-left text-lg text-fuchsia-100/80 md:text-right">Subscribe to the monthly Newsletter</p>
+      <NewsletterForm />
     </div>
   </section>
 </SectionShell>

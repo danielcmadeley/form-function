@@ -7,11 +7,11 @@ const rows = [
 ];
 ---
 
-<section class="w-full border-b border-fuchsia-200">
-  <div class="mx-auto w-full max-w-5xl border-x border-fuchsia-200/70">
+<section class="w-full border-b border-fuchsia-200 ">
+  <div class="mx-auto w-full max-w-5xl border-x border-fuchsia-200">
     {
       rows.map((row) => (
-        <div key={row.id} class="flex min-h-44 flex-col border-b border-fuchsia-200/70 md:min-h-48 md:flex-row">
+        <div key={row.id} class="flex h-[188px] flex-col border-b border-fuchsia-200 md:flex-row">
           <div class={`${row.left} border-fuchsia-200/70 md:border-r`}></div>
           <div class={row.right}></div>
         </div>
