@@ -1,21 +1,49 @@
-# React + TypeScript + Vite + shadcn/ui
+# Web App (Vite + React)
 
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
+Deployment target: **Cloudflare Workers static assets**.
 
-## Adding components
-
-To add components to your app, run the following command:
+## Local development
 
 ```bash
-npx shadcn@latest add button
+bun run dev
 ```
 
-This will place the ui components in the `src/components` directory.
+## Build
 
-## Using components
+- Type-checked build:
 
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button"
+```bash
+bun run build
 ```
+
+- SPA build only (used for Cloudflare deploy):
+
+```bash
+bun run build:spa
+```
+
+## Cloudflare deployment
+
+Wrangler config is in `wrangler.jsonc` and serves assets from `./dist` with SPA fallback.
+
+### 1) One-time auth
+
+```bash
+bunx wrangler login
+```
+
+### 2) Local worker preview
+
+```bash
+bun run cf:dev
+```
+
+### 3) Deploy
+
+```bash
+bun run cf:deploy
+```
+
+## Domain mapping
+
+After deploy, add custom domain `app.itsformfunction.com` in Cloudflare Workers settings for `form-function-web-app`.

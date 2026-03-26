@@ -41,3 +41,9 @@
 - Decision: Treat `platform/apps/marketing/src/components/ui/*` as shadcn-managed/vendor code and do not edit those files during normal feature work.
 - Consequences: Feature customization should happen in `platform/apps/marketing/src/components/marketing/*`; any required primitive change must go through shadcn regeneration/update flow and be documented.
 - Alternatives considered: direct per-feature edits inside `src/components/ui`.
+
+## 2026-03-26 - Web app routing and Cloudflare SPA deployment baseline
+- Context: `apps/web-app` needed product routes for core modules and a deploy target for `app.itsformfunction.com`.
+- Decision: Use TanStack Router route files for app sections and configure Cloudflare Workers static assets deployment with SPA fallback (`not_found_handling: single-page-application`).
+- Consequences: Route modules now live under `apps/web-app/src/routes/*`, the dashboard shell is split into sidebar/content sections, and deployment is driven by `apps/web-app/wrangler.jsonc` + `cf:*` scripts.
+- Alternatives considered: keep single-route app shell; deploy through Cloudflare Pages.
